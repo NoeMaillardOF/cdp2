@@ -30,7 +30,7 @@ RUN apk -v --no-cache add tar ca-certificates python3  python3-dev  skopeo coreu
     && helm3 plugin install https://github.com/helm/helm-2to3 \
     && rm -rf /var/lib/apk/lists/* && rm -rf /var/cache/apk/* /root/.cache /usr/lib/python3.8/site-packages/pip /usr/lib/python3.8/__pycache__ /usr/lib/python3.8/site-packages/awscli/examples /usr/lib/python3.8/site-packages/config-3.8* \
     && mkdir -p /root/.docker && iptables-legacy-save
-RUN  python -m build -n -x && rm -rf /cdp/..?* .[!.]*
+RUN  python -m pip install . --break-system-packages && rm -rf /cdp/..?* .[!.]*
 
 
 # Options Podman
